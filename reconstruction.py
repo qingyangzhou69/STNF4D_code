@@ -25,7 +25,7 @@ def convert_to_HU(mu):
     mu_air = 0.0004
     HU = (mu-mu_water)*1000/(mu_water - mu_air)
     return HU
-def windowsee8bit(HU,wind):
+def windowsee8bit(HU,wind): #
 
     clip_hu = np.clip(HU, wind[0], wind[1], out=None)
     norm = (clip_hu-wind[0])/(wind[1]-wind[0])
@@ -74,7 +74,7 @@ class demo(Trainer_val):
 
         SSIM = []
         PSNR = []
-        for i in range(10):
+        for i in range(self.num_phases):
             phase_num=i+1
             voxel_path = self.expdir + '/demo/' + 'voxelallphase/'
             if not os.path.exists( voxel_path):
@@ -89,8 +89,7 @@ class demo(Trainer_val):
             image_pred = run_network(comb, self.dy_net,self.netchunk)
             image_pred = image_pred.squeeze()
             image_pred_np=image_pred.detach().cpu().numpy()
-            # SSIM.append(image_pred, image)
-            # PSNR =
+
 
             loss = {
 
@@ -100,10 +99,10 @@ class demo(Trainer_val):
             image_pred_np = convert_to_HU(image_pred_np)
             if not os.path.exists( voxel_path+'Phase'+str(phase_num)+'/'):
                 os.makedirs( voxel_path+'Phase'+str(phase_num)+'/')
-            # for i in range(image_pred_np.shape[2]):
-            #     index = str(i)
-            #     (Image.fromarray(windowsee8bit(image_pred_np[:, :, i],[-1000,500]))).save(voxel_path+'Phase'+str(phase_num)+'/'+index + '.png')
-            # print(f'[EVAL] {self.fmt_loss_str(loss)}')
+            for i in range(image_pred_np.shape[2]):
+                index = str(i)
+                (Image.fromarray(windowsee8bit(image_pred_np[:, :, i],[-1000,500]))).save(voxel_path+'Phase'+str(phase_num)+'/'+index + '.png') #[-1000,100] in industrial dataset
+            print(f'[EVAL] {self.fmt_loss_str(loss)}')
             PSNR.append(loss['psnr_3d'])
             SSIM.append(loss['ssim_3d'])
         PSNR = np.array(PSNR)
