@@ -50,7 +50,7 @@ python setup.py develop
 
 ### Prepare Dataset
 
-Download 4D CT datasets from [here](https://drive.google.com/drive/folders/1Ty4sutLKIaTtJbyIM-XckXBRLHdqV2yu?usp=drive_link). Put them into the folder `./data` as
+Download 4D CT datasets from [here](https://drive.google.com/drive/folders/1Ty4sutLKIaTtJbyIM-XckXBRLHdqV2yu?usp=drive_link). Put them into the folder `./data` as:
 
 ```sh
   |--data
@@ -64,6 +64,7 @@ Download 4D CT datasets from [here](https://drive.google.com/drive/folders/1Ty4s
       |--S04_009_256_60.pickle
       |--S08_700_256_60.pickle
       |--S12_021_256_60.pickle
+      
 ```
 
 ### Training
@@ -96,7 +97,7 @@ python makegif.py --expname XCAT --slicenum 109 --phasenum 10
 
 If you want to try more medical datasets, follow this [instruction](data_generator/medical_datasets/README.md) to create your own dataset.
 
-If you want to try more industrial datasets, follow this [instruction](data_generator/industrial_datasets/README.md)
+If you want to try more industrial datasets, follow this [instruction](data_generator/industrial_datasets/README.md).
 
 ## Citation
 
