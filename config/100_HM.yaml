@@ -11,7 +11,7 @@ dy_network:
   hidden_dim: 32
   skips: [2]
   out_dim: 1
-  last_activation: relu
+  last_activation: softplus
   bound: 0.5
 
 dy_encoder:

@@ -103,6 +103,8 @@ class DynamicNetwork(nn.Module):
         if last_activation == 'sigmoid':
             self.activations.append(nn.Sigmoid())
         elif last_activation == 'relu':
+            self.activations.append(nn.ReLU())
+        elif last_activation == 'softplus':
             self.activations.append(nn.Softplus())
         else:
             NotImplementedError('Unknown last activation')
