@@ -68,7 +68,7 @@ Download 4D CT datasets from [here](https://drive.google.com/drive/folders/1Ty4s
 ```
 
 ### Training
-
+Run `train.py` to train the model. You can specify the configuration file using the `--config` argument.
 
 Experiments settings are stored in `./config` folder.
 
