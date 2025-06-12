@@ -33,11 +33,12 @@ def calc_tv_loss(loss, x, k):
         x (n1, n2, n3, 1): 3d density field.
         k: relative weight
     """
-    n1, n2, n3 = x.shape
-    tv_1 = torch.abs(x[1:,1:,1:]-x[:-1,1:,1:]).sum()
-    tv_2 = torch.abs(x[1:,1:,1:]-x[1:,:-1,1:]).sum()
-    tv_3 = torch.abs(x[1:,1:,1:]-x[1:,1:,:-1]).sum()
-    tv = (tv_1+tv_2+tv_3) / (n1*n2*n3)
+    n1, n2, n3,n4 = x.shape
+    tv_1 = torch.abs(x[1:,1:,1:,1:]-x[:-1,1:,1:,1:]).sum()
+    tv_2 = torch.abs(x[1:,1:,1:,1:]-x[1:,:-1,1:,1:]).sum()
+    tv_3 = torch.abs(x[1:,1:,1:,1:]-x[1:,1:,:-1,1:]).sum()
+    tv_4 = torch.abs(x[1:,1:,1:,1:]-x[1:,1:,1:,-1:]).sum()
+    tv = (tv_1+tv_2+tv_3+tv_4) / (n1*n2*n3*n4)
     loss['loss'] += tv * k
     loss['loss_tv'] = tv * k
     return loss

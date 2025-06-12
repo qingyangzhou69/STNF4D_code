@@ -156,7 +156,7 @@ class Trainer:
             pred_proj = ret['acc']
 
             image_pred = None
-            if self.conf['train']['isTVloss']:
+            if self.conf['train']['isTVloss'] and idx_epoch>=6000:
                 x,y,z,_ = self.train_dset.voxels.shape
                 xdim = 64
                 ydim = 64

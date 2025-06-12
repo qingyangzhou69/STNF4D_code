@@ -5,7 +5,7 @@ Spatiotemporal-aware Neural Fields for Dynamic CT Reconstruction [[Paper](https:
 
 [Qingyang Zhou](),[Yunfan Ye](https://yunfan1202.github.io),  [Zhiping Cai]().
 
-![](./figures/teaser.gif)
+![demo](./figures/teaser.gif)
 
 ### Abstract
 We propose a dynamic Computed Tomography (CT) reconstruction framework called STNF4D (SpatioTemporal-aware Neural Fields). 
