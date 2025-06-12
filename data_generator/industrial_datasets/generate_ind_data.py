@@ -84,7 +84,7 @@ if __name__ == '__main__':
     # path = '803^LLNL/bb1507819f_3_1/D4DCT_DFM/S00_101/00_080_720_090_gt_f009.raw'
     images = loadimage(path,60)
 
-    outputPath = 'data/S'+S+'_'+m+'_256_60.pickle'
+    outputPath = '../../data/S'+S+'_'+m+'_256_60.pickle'
 
     with open(configPath, 'r') as handle:
         data = yaml.safe_load(handle)

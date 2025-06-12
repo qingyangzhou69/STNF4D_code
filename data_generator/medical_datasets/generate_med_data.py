@@ -109,8 +109,6 @@ def read_GT(path):
     # volumes = (norml(volumes)*1500-1000).astype(np.float32)
     volumes = convert_to_attenuation(volumes).astype(np.float32)
     volumes = np.transpose(volumes,(0,2,3,1))
-    # projections = projections[:,68:443,92:422]
-    # projections = projections[:, 68:443, 92:422]
     volumes = volumes[...,64:]  #cut关键 101为64: 其他为30:-30
     volumes = volumes[:,163:450,66:470, :] #100HM: 113:400,66:470  101HM:450,66:470  102HM 163:450,66:470   103HM 163:450,66:470
     volumes = np.flip(volumes, axis=-1)
@@ -133,7 +131,7 @@ if __name__ == '__main__':
     num_phase = 10
     train_scales = 10
     # outputPath = './data/' + case + str(num_phase*train_scales)+'wooff_cuthu'+'.pickle' ###
-    outputPath = '../..//data/' + case +'.pickle' ###
+    outputPath = '../../data/' + case +'.pickle' ###
     val_scales = 5
     train_phase = np.linspace(1, num_phase, num_phase)
     train_phase = np.tile(train_phase, [train_scales, 1])

@@ -59,6 +59,11 @@ Download 4D CT datasets from [here](https://drive.google.com/drive/folders/1Ty4s
       |--101_HM.pickle
       |--102_HM.pickle
       |--103_HM.pickle
+      |--S01_004_256_60.pickle
+      |--S02_005_256_60.pickle
+      |--S04_009_256_60.pickle
+      |--S08_700_256_60.pickle
+      |--S12_021_256_60.pickle
 ```
 
 ### Training
