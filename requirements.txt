@@ -1,0 +1,13 @@
+ninja==1.11.1.1
+opencv-python==4.9.0.80
+tensorboard==2.16.2
+numpy==1.26.4
+pandas==2.2.2
+tqdm==4.65.2
+matplotlib==3.8.4
+rich==13.4.2
+dearpygui==2.0.0
+packaging==24.0
+scipy==1.13.0
+PyYAML==6.0.1
+scikit-image==0.19.0

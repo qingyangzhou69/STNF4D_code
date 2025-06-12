@@ -1,7 +1,7 @@
 exp:
-  expname: XCAT_CUT_100_wooff
+  expname: XCAT
   expdir: ./logs/
-  datadir: ./data/XCAT_CUT_100_wooff.pickle
+  datadir: ./data/XCAT.pickle
 
 is_dynet: True
 num_phases: 10

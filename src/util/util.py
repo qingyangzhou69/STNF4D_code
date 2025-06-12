@@ -89,7 +89,7 @@ def get_ssim_3d(arr1, arr2, size_average=True, PIXEL_MAX=1.0):
     arr2_d = np.transpose(arr2, (0, 2, 3, 1))
     ssim_d = []
     for i in range(N):
-        ssim = structural_similarity(arr1_d[i], arr2_d[i],data_range=2)
+        ssim = structural_similarity(arr1_d[i], arr2_d[i])
         ssim_d.append(ssim)
     ssim_d = np.asarray(ssim_d, dtype=np.float64)
 
@@ -98,7 +98,7 @@ def get_ssim_3d(arr1, arr2, size_average=True, PIXEL_MAX=1.0):
     arr2_h = np.transpose(arr2, (0, 1, 3, 2))
     ssim_h = []
     for i in range(N):
-        ssim = structural_similarity(arr1_h[i], arr2_h[i],data_range=2)
+        ssim = structural_similarity(arr1_h[i], arr2_h[i])
         ssim_h.append(ssim)
     ssim_h = np.asarray(ssim_h, dtype=np.float64)
 
@@ -107,7 +107,7 @@ def get_ssim_3d(arr1, arr2, size_average=True, PIXEL_MAX=1.0):
     # arr2_w = np.transpose(arr2, (0, 1, 2, 3))
     ssim_w = []
     for i in range(N):
-        ssim = structural_similarity(arr1[i], arr2[i],data_range=2)
+        ssim = structural_similarity(arr1[i], arr2[i])
         ssim_w.append(ssim)
     ssim_w = np.asarray(ssim_w, dtype=np.float64)
 
