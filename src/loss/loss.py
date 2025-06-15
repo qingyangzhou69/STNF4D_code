@@ -42,7 +42,20 @@ def calc_tv_loss(loss, x, k):
     loss['loss'] += tv * k
     loss['loss_tv'] = tv * k
     return loss
+def calc_La_loss_t(loss, x, k):
+    """
+    Calculate total variation loss.
+    Args:
+        x (n1, n2, n3, 1): 3d density field.
+        k: relative weight
+    """
+    n1, n2, n3,n4 = x.shape
+    smooth = torch.abs(x[0]+x[2]-2*x[1]).sum()
 
+    tv = smooth / (n2*n3*n4)
+    loss['loss'] += tv * k
+    loss['loss_la'] = tv * k
+    return loss
 def calc_tv_loss_t(loss, x, k):
     """
     Calculate total variation loss.

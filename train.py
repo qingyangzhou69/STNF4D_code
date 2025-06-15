@@ -66,7 +66,8 @@ class BasicTrainer(Trainer):
             loss['loss']+=extra_loss*0.001
         if img_pred!=None:
             img_pred=img_pred.squeeze()
-            calc_tv_loss_t(loss,img_pred,0.00001)
+            calc_tv_loss_t(loss,img_pred,0.000001)
+            calc_La_loss_t(loss, img_pred, 0.000001)
         # loss['loss'] += self.s3im_func(projs, projs_pred)
         # Log
         for ls in loss.keys():

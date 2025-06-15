@@ -30,7 +30,7 @@ render:
   netchunk: 409600
 
 train:
-  epoch: 50000
+  epoch: 80000
   n_batch: 1
   n_rays: 1024
   lrate: 0.01
@@ -40,6 +40,6 @@ train:
   isTVloss: True
 
 log:
-  i_eval: 1000
-  i_save: 10000
+  i_eval: 10000
+  i_save: 20000
 

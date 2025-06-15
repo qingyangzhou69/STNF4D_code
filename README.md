@@ -50,7 +50,7 @@ python setup.py develop
 
 ### Prepare Dataset
 
-Download 4D CT datasets from [here](https://drive.google.com/drive/folders/1Ty4sutLKIaTtJbyIM-XckXBRLHdqV2yu?usp=drive_link). Put them into the folder `./data` as:
+Download 4D CT datasets from [Google drive](https://drive.google.com/drive/folders/1Ty4sutLKIaTtJbyIM-XckXBRLHdqV2yu?usp=drive_link) or [Baidu disk](https://pan.baidu.com/s/5hyKdDbk5UWP58c4DePha5g) Put them into the folder `./data` as:
 
 ```sh
   |--data
